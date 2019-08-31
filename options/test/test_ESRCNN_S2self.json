@@ -1,0 +1,18 @@
+{
+  "name": "ESRCNN_S2self"
+  , "suffix": "_ESRCNN_S2self"
+  , "model": "esrcnn_s2self"
+  , "gpu_ids": [0]
+
+  , "datasets": {
+    "dataroot": "./dataset"
+
+  }
+
+  , "path": {
+    "root": "./"
+  , "experiments_root": "../experiments"
+  , "pretrain_model": "./experiments/ESRCNN_S2self/models/500.pth"
+  }
+
+}
