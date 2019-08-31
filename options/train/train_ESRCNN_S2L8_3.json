@@ -1,0 +1,42 @@
+{
+  "name": "ESRCNN_S2L8_3"
+  , "use_tb_logger": true
+  , "model":"esrcnn_s2l8_3"
+  , "gpu_ids": [0]
+
+  , "datasets": {
+    "train": {
+       "dataroot": "./dataset/train_data_S2L8_3"
+      , "subset_file": null
+      , "use_shuffle": true
+      , "n_workers": 8
+      , "batch_size": 64
+      , "use_flip": true
+      , "use_rot": true
+    }
+  }
+
+  , "path": {
+    "root": "./"
+    , "experiments_root": "../experiments"
+    //, "resume_state": "./experiments/ESRCNN_S2L8_3/training_state/latest.state"
+    //, "pretrain_model": "./experiments/ESRCNN_S2L8_3/models/latest.pth"
+  }
+
+  , "train": {
+    "lr": 1e-4
+    , "weight_decay": 0
+    , "beta1": 0.9
+    , "lr_scheme": "MultiStepLR"
+    , "lr_steps": [50000, 100000, 200000, 300000]
+    , "lr_gamma": 1
+    , "manual_seed": 0
+    , "niter": 5e5
+    , "val_freq": 5e2
+  }
+
+  , "logger": {
+    "print_freq": 200
+    , "save_checkpoint_freq": 5e2
+  }
+}
